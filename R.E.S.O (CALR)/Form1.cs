@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Management;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -70,6 +71,7 @@ namespace R.E.S.O__CALR_
             rtxtdatos.Clear();
             string nomprocesadores = "";
             string ramtot = "";
+            string tarjetared = "";
             try
             {
                 ManagementObjectSearcher procesadores = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
@@ -82,12 +84,20 @@ namespace R.E.S.O__CALR_
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher(wql);
                 foreach (ManagementObject result in searcher.Get())
                 {
-                    ramtot =  (" Memoria RAM total: ", result["TotalVisibleMemorySize"]).ToString();
+                    ramtot = (" Memoria RAM total: ", result["TotalVisibleMemorySize"]).ToString();
                 }
-                
-                rtxtdatos.Text = (nomprocesadores + "Cantidad de nucleos logicos " + (Environment.ProcessorCount).ToString() + ramtot);
 
 
+                ManagementObjectSearcher reder = new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapter WHERE NetConnectionID IS NOT NULL");
+
+                foreach (ManagementObject queryObj in reder.Get())
+                {
+                    tarjetared = ("Nombre de la tarjeta de red: ", queryObj["Name"]).ToString();
+                    //se detiene para que no se confunda con otros adaptadores
+                    break;
+                }
+
+                rtxtdatos.Text = (nomprocesadores + "Cantidad de nucleos logicos " + (Environment.ProcessorCount).ToString() +"\n"+ ramtot+ "\n" + tarjetared);
 
             }
 
@@ -104,6 +114,19 @@ namespace R.E.S.O__CALR_
             Wclave wclave = new Wclave();
             wclave.Show();
             this.Hide();
+        }
+
+        private void cmdMac_Click(object sender, EventArgs e)
+        {
+
+            foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                if (nic.Name == "Wi-Fi")
+                {
+                    rtxtdatos.Text = ("Nombre del adaptador: ", nic.Name).ToString() + "\n" + ("Dirección MAC: ", nic.GetPhysicalAddress().ToString()).ToString();
+                    break;
+                }
+            }
         }
     }
 }
