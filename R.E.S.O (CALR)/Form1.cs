@@ -113,7 +113,6 @@ namespace R.E.S.O__CALR_
         {
             Wclave wclave = new Wclave();
             wclave.Show();
-            this.Hide();
         }
 
         private void cmdMac_Click(object sender, EventArgs e)
@@ -127,6 +126,12 @@ namespace R.E.S.O__CALR_
                     break;
                 }
             }
+        }
+
+        private void cmdProcesos_Click(object sender, EventArgs e)
+        {
+            Wmataprocesos wmataprocesos = new Wmataprocesos();
+            wmataprocesos.Show();
         }
     }
 }

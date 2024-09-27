@@ -33,6 +33,8 @@
             this.lblcontraseña = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
+            this.cmdModificar = new System.Windows.Forms.Button();
+            this.cmdEliminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdCrearCont
@@ -82,11 +84,35 @@
             this.txtValor.Size = new System.Drawing.Size(284, 29);
             this.txtValor.TabIndex = 3;
             // 
+            // cmdModificar
+            // 
+            this.cmdModificar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdModificar.Location = new System.Drawing.Point(221, 157);
+            this.cmdModificar.Name = "cmdModificar";
+            this.cmdModificar.Size = new System.Drawing.Size(75, 23);
+            this.cmdModificar.TabIndex = 5;
+            this.cmdModificar.Text = "Modificar";
+            this.cmdModificar.UseVisualStyleBackColor = true;
+            this.cmdModificar.Click += new System.EventHandler(this.cmdModificar_Click);
+            // 
+            // cmdEliminar
+            // 
+            this.cmdEliminar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdEliminar.Location = new System.Drawing.Point(12, 215);
+            this.cmdEliminar.Name = "cmdEliminar";
+            this.cmdEliminar.Size = new System.Drawing.Size(75, 23);
+            this.cmdEliminar.TabIndex = 6;
+            this.cmdEliminar.Text = "Eliminar";
+            this.cmdEliminar.UseVisualStyleBackColor = true;
+            this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
+            // 
             // Wclave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(308, 250);
+            this.Controls.Add(this.cmdEliminar);
+            this.Controls.Add(this.cmdModificar);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.lblcontraseña);
@@ -106,5 +132,7 @@
         private System.Windows.Forms.Label lblcontraseña;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.Button cmdModificar;
+        private System.Windows.Forms.Button cmdEliminar;
     }
 }
