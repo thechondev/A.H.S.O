@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblNomproceso = new System.Windows.Forms.Label();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtProceso = new System.Windows.Forms.TextBox();
             this.cmdcerrar = new System.Windows.Forms.Button();
             this.rtxtProcesos = new System.Windows.Forms.RichTextBox();
             this.cmdObtenerpro = new System.Windows.Forms.Button();
@@ -45,13 +45,13 @@
             this.lblNomproceso.TabIndex = 1;
             this.lblNomproceso.Text = "IM del proceso";
             // 
-            // txtContraseña
+            // txtProceso
             // 
-            this.txtContraseña.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(12, 36);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(284, 29);
-            this.txtContraseña.TabIndex = 2;
+            this.txtProceso.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProceso.Location = new System.Drawing.Point(12, 36);
+            this.txtProceso.Name = "txtProceso";
+            this.txtProceso.Size = new System.Drawing.Size(284, 29);
+            this.txtProceso.TabIndex = 2;
             // 
             // cmdcerrar
             // 
@@ -62,6 +62,7 @@
             this.cmdcerrar.TabIndex = 5;
             this.cmdcerrar.Text = "Cerrar proceso";
             this.cmdcerrar.UseVisualStyleBackColor = true;
+            this.cmdcerrar.Click += new System.EventHandler(this.cmdcerrar_Click);
             // 
             // rtxtProcesos
             // 
@@ -82,7 +83,7 @@
             this.cmdObtenerpro.UseVisualStyleBackColor = true;
             this.cmdObtenerpro.Click += new System.EventHandler(this.cmdObtenerpro_Click);
             // 
-            // mataprocesos
+            // Wmataprocesos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,9 +91,9 @@
             this.Controls.Add(this.cmdObtenerpro);
             this.Controls.Add(this.rtxtProcesos);
             this.Controls.Add(this.lblNomproceso);
-            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtProceso);
             this.Controls.Add(this.cmdcerrar);
-            this.Name = "mataprocesos";
+            this.Name = "Wmataprocesos";
             this.Text = "mataprocesos";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -102,7 +103,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblNomproceso;
-        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtProceso;
         private System.Windows.Forms.Button cmdcerrar;
         private System.Windows.Forms.RichTextBox rtxtProcesos;
         private System.Windows.Forms.Button cmdObtenerpro;

@@ -28,5 +28,28 @@ namespace R.E.S.O__CALR_
             }
 
         }
+
+        private void cmdcerrar_Click(object sender, EventArgs e)
+        {
+            foreach (Process proceso in Process.GetProcesses())
+            {
+                try
+                {
+                    // Comparar el nombre del proceso
+                    if (proceso.ProcessName == txtProceso.Text)
+                    {
+                        // Cerrar el proceso
+                        proceso.Kill();
+                        MessageBox.Show($"{txtProceso.Text} cerrado exitosamente");
+                    }
+                    
+                }
+                catch (Win32Exception r)
+                {
+                    MessageBox.Show(r.Message);
+                }
+                
+            }
+        }
     }
 }
