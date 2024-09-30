@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace R.E.S.O__CALR_
 {
-    public partial class Form1 : Form
+    public partial class WInicio : Form
     {
         private string Serial;
-        public Form1()
+        public WInicio()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace R.E.S.O__CALR_
 {
-    partial class Form1
+    partial class WInicio
     {
         /// <summary>
         /// Variable del diseñador necesaria.

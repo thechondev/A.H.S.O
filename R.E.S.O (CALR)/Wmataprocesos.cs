@@ -24,7 +24,15 @@ namespace R.E.S.O__CALR_
 
             foreach (Process process in processList)
             {
-                rtxtProcesos.AppendText("Nombre del proceso: " + process.ProcessName.ToString() + " Nombre Imagen " + process.MainModule.FileName.ToString());
+                try
+                {
+                    rtxtProcesos.AppendText("Nombre del proceso: " + process.ProcessName.ToString() + " Nombre Imagen " + process.MainModule.FileName.ToString());
+                }
+                catch (Win32Exception r) 
+                {
+                    MessageBox.Show(r.Message);
+                    
+                }
             }
 
         }
@@ -47,6 +55,7 @@ namespace R.E.S.O__CALR_
                 catch (Win32Exception r)
                 {
                     MessageBox.Show(r.Message);
+                    break;
                 }
                 
             }
