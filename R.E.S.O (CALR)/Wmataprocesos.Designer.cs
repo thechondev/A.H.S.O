@@ -28,73 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Wmataprocesos));
             this.lblNomproceso = new System.Windows.Forms.Label();
-            this.txtProceso = new System.Windows.Forms.TextBox();
             this.cmdcerrar = new System.Windows.Forms.Button();
-            this.rtxtProcesos = new System.Windows.Forms.RichTextBox();
             this.cmdObtenerpro = new System.Windows.Forms.Button();
+            this.cboprocesos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblNomproceso
             // 
             this.lblNomproceso.AutoSize = true;
             this.lblNomproceso.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomproceso.Location = new System.Drawing.Point(12, 11);
+            this.lblNomproceso.Location = new System.Drawing.Point(99, 9);
             this.lblNomproceso.Name = "lblNomproceso";
             this.lblNomproceso.Size = new System.Drawing.Size(111, 19);
             this.lblNomproceso.TabIndex = 1;
             this.lblNomproceso.Text = "IM del proceso";
             // 
-            // txtProceso
-            // 
-            this.txtProceso.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProceso.Location = new System.Drawing.Point(12, 36);
-            this.txtProceso.Name = "txtProceso";
-            this.txtProceso.Size = new System.Drawing.Size(284, 29);
-            this.txtProceso.TabIndex = 2;
-            // 
             // cmdcerrar
             // 
             this.cmdcerrar.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdcerrar.Location = new System.Drawing.Point(12, 82);
+            this.cmdcerrar.Location = new System.Drawing.Point(12, 91);
             this.cmdcerrar.Name = "cmdcerrar";
-            this.cmdcerrar.Size = new System.Drawing.Size(280, 23);
+            this.cmdcerrar.Size = new System.Drawing.Size(284, 29);
             this.cmdcerrar.TabIndex = 5;
             this.cmdcerrar.Text = "Cerrar proceso";
             this.cmdcerrar.UseVisualStyleBackColor = true;
             this.cmdcerrar.Click += new System.EventHandler(this.cmdcerrar_Click);
             // 
-            // rtxtProcesos
-            // 
-            this.rtxtProcesos.Location = new System.Drawing.Point(343, 11);
-            this.rtxtProcesos.Name = "rtxtProcesos";
-            this.rtxtProcesos.Size = new System.Drawing.Size(528, 364);
-            this.rtxtProcesos.TabIndex = 4;
-            this.rtxtProcesos.Text = "";
-            // 
             // cmdObtenerpro
             // 
             this.cmdObtenerpro.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdObtenerpro.Location = new System.Drawing.Point(80, 152);
+            this.cmdObtenerpro.Location = new System.Drawing.Point(82, 189);
             this.cmdObtenerpro.Name = "cmdObtenerpro";
             this.cmdObtenerpro.Size = new System.Drawing.Size(142, 83);
             this.cmdObtenerpro.TabIndex = 3;
-            this.cmdObtenerpro.Text = "Obtener  Procesos";
+            this.cmdObtenerpro.Text = "Actualizar Procesos";
             this.cmdObtenerpro.UseVisualStyleBackColor = true;
             this.cmdObtenerpro.Click += new System.EventHandler(this.cmdObtenerpro_Click);
+            // 
+            // cboprocesos
+            // 
+            this.cboprocesos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboprocesos.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboprocesos.FormattingEnabled = true;
+            this.cboprocesos.Location = new System.Drawing.Point(12, 47);
+            this.cboprocesos.Name = "cboprocesos";
+            this.cboprocesos.Size = new System.Drawing.Size(284, 29);
+            this.cboprocesos.Sorted = true;
+            this.cboprocesos.TabIndex = 6;
             // 
             // Wmataprocesos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 387);
+            this.ClientSize = new System.Drawing.Size(315, 387);
+            this.Controls.Add(this.cboprocesos);
             this.Controls.Add(this.cmdObtenerpro);
-            this.Controls.Add(this.rtxtProcesos);
             this.Controls.Add(this.lblNomproceso);
-            this.Controls.Add(this.txtProceso);
             this.Controls.Add(this.cmdcerrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Wmataprocesos";
             this.Text = "mataprocesos";
+            this.Load += new System.EventHandler(this.Wmataprocesos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,9 +99,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblNomproceso;
-        private System.Windows.Forms.TextBox txtProceso;
         private System.Windows.Forms.Button cmdcerrar;
-        private System.Windows.Forms.RichTextBox rtxtProcesos;
         private System.Windows.Forms.Button cmdObtenerpro;
+        private System.Windows.Forms.ComboBox cboprocesos;
     }
 }
